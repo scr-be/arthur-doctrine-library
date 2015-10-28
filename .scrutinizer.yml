@@ -9,8 +9,7 @@ filter:
         - 'bin/'
         - 'build/'
         - 'docs/'
-        - 'src/Tests/'
-        - 'src/Resources/'
+        - 'tests/'
         - 'vendor/'
 
 tools:
