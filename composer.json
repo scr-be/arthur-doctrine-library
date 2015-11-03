@@ -3,7 +3,7 @@
     "license"     : "MIT",
     "type"        : "library",
     "homepage"    : "https://scr.be/arthur-doctrine-library",
-    "description" : "A collection of objects/interfaces to simplify bundle setup, such as advanced bundle configuration, compiler passes, and deprecaton error handlers.",
+    "description" : "Simple library providing a foundation for our Doctrine work, including base entity classes and ORM-specific exceptions.",
     "support" : {
         "email"  : "rmf@scr.be",
         "issues" : "https://arthur-doctrine-library.oss.scr.be/issues",
@@ -34,7 +34,8 @@
     },
     "autoload" : {
         "psr-4" : {
-            "Scribe\\Doctrine\\" : "lib/"
+            "Scribe\\Doctrine\\Exception\\"    : "lib/Exception/",
+            "Scribe\\Doctrine\\ORM\\Mapping\\" : "lib/ORM/Mapping/"
         }
     },
     "autoload-dev" : {
@@ -44,8 +45,7 @@
     },
     "config": {
         "bin-dir"           : "bin",
-        "minimum-stability" : "dev",
-        "prefer-stable"     : true
+        "minimum-stability" : "dev"
     },
     "extra": {
         "branch-alias": {
