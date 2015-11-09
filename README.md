@@ -1,19 +1,19 @@
-# Scribe / Doctrine UUID
+# Scribe: Arthur Doctrine Library
 
-[![Travis](https://img.shields.io/travis/scr-be/arthur-doctrine-library/master.svg?style=flat-square)](https://arthur-doctrine-library.oss.scr.be/ci) 
-[![Scrutinizer](https://img.shields.io/scrutinizer/g/scr-be/arthur-doctrine-library/master.svg?style=flat-square)](https://arthur-doctrine-library.oss.scr.be/quality)
-[![Coveralls](https://img.shields.io/coveralls/scr-be/arthur-doctrine-library/master.svg?style=flat-square)](https://arthur-doctrine-library.oss.scr.be/coverage)
-[![Gemnasium](https://img.shields.io/gemnasium/scr-be/arthur-doctrine-library.svg?style=flat-square)](https://arthur-doctrine-library.oss.scr.be/deps)
+[![Travis](https://scr.be/arthur-doctrine-library/travis_shield)](https://scr.be/arthur-doctrine-library/travis)
+[![Scrutinizer](https://scr.be/arthur-doctrine-library/scrutinizer_shield)](https://scr.be/arthur-doctrine-library/scrutinizer)
+[![Coveralls](https://scr.be/arthur-doctrine-library/coveralls_shield)](https://scr.be/arthur-doctrine-library/coveralls)
+[![Gemnasium](https://scr.be/arthur-doctrine-library/gemnasium_shield)](https://scr.be/arthur-doctrine-library/gemnasium)
 
-*scribe/arthur-doctrine-library* is an MIT licensed library that basic additions to Doctrine, used
-mainly as a dependency for a collection of additional libraries.
+The `scr-be/arthur-doctrine-library` project is small library that provides foundational Doctrine functions and classes, 
+used as the base for many other Scribe projects.
 
-## License and Documentation
+## License, Reference, and Release
 
-[![License](https://img.shields.io/badge/license-MIT-008ac6.svg?style=flat-square)](https://arthur-doctrine-library.oss.scr.be/license)
-[![RTD](https://readthedocs.org/projects/scribe-arthur-doctrine-library/badge/?version=latest&style=flat-square)](https://arthur-doctrine-library.oss.scr.be/docs)
-[![API](https://img.shields.io/badge/docs-reference%20api-c75ec1.svg?style=flat-square)](https://arthur-doctrine-library.oss.scr.be/api)
+[![License](https://scr.be/arthur-doctrine-library/license_shield)](https://scr.be/arthur-doctrine-library/license)
+[![README](https://scr.be/arthur-doctrine-library/readme_shield)](https://scr.be/arthur-doctrine-library/readme)
+[![API](https://scr.be/arthur-doctrine-library/api_shield)](https://scr.be/arthur-doctrine-library/api)
+[![Packagist](https://scr.be/arthur-doctrine-library/packagist_shield)](https://scr.be/arthur-doctrine-library/packagist)
 
-This project is licensed under the [MIT License](https://arthur-doctrine-library.oss.scr.be/license). API reference is available via the above button.
-
-**Additional documentation is available on our [Read the Docs](https://arthur-doctrine-library.oss.scr.be/docs) page.**
+This project is licensed under the [MIT License](https://github.com/scr-be/arthur-doctrine-library/blob/master/LICENSE.md).
+API Reference docs and our latest release are available via the above badges.
