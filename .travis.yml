@@ -1,6 +1,7 @@
 ---
 
-language: php
+language : php
+sudo     : required
 
 env:
     global:
