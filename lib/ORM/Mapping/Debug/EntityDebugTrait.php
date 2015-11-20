@@ -16,6 +16,8 @@ namespace Scribe\Doctrine\ORM\Mapping\Debug;
  */
 trait EntityDebugTrait
 {
+    abstract public function __toArray();
+
     /**
      * {@inheritdoc}
      *
@@ -23,9 +25,14 @@ trait EntityDebugTrait
      */
     public function __debugInfo()
     {
-        return [
-            get_object_vars($this),
-        ];
+        return array_merge(
+            [
+                'selfClass' => get_class($this),
+                'selfClassStatic' => get_called_class(),
+                'selfClassParent' => get_parent_class($this),
+            ],
+            $this->__toArray()
+        );
     }
 }
 

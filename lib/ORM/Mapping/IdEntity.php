@@ -22,14 +22,6 @@ class IdEntity extends Entity implements IdEntityInterface
     protected $id;
 
     /**
-     * @return string
-     */
-    final public function getIdentityType()
-    {
-        return self::IDENTITY_TYPE_ID;
-    }
-
-    /**
      * @param null|int $id
      *
      * @return $this
@@ -65,6 +57,14 @@ class IdEntity extends Entity implements IdEntityInterface
         $this->id = null;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    final public function getIdentityType()
+    {
+        return self::IDENTITY_TYPE_ID;
     }
 }
 

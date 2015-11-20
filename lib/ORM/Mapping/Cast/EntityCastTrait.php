@@ -33,7 +33,7 @@ trait EntityCastTrait
      */
     public function __toString()
     {
-        return sprintf('%s [%s:%s]', get_class($this), $this->getIdentityType(), (string) ($this->getIdentity() ?: 'no-identity'));
+        return sprintf('%s [%s:%s]', get_class($this), $this->getIdentityType(), (string) ($this->hasIdentity() ? $this->getIdentity() : 'no-identity'));
     }
 
     /**
@@ -44,8 +44,8 @@ trait EntityCastTrait
     public function __toArray()
     {
         return [
-            ['properties' => (array) get_class_vars(get_class($this))],
-            ['methods' => (array) get_class_methods(get_class($this))]
+            'properties' => (array) get_class_vars(get_class($this)),
+            'methods' => (array) get_class_methods(get_class($this))
         ];
     }
 }

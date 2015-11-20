@@ -14,20 +14,12 @@ namespace Scribe\Doctrine\ORM\Mapping;
 /**
  * Class UuidEntity.
  */
-abstract class UuidEntity extends Entity implements UuidEntityInterface
+class UuidEntity extends Entity implements UuidEntityInterface
 {
     /**
      * @var null|string
      */
     protected $uuid;
-
-    /**
-     * @return string
-     */
-    final public function getIdentityType()
-    {
-        return self::IDENTITY_TYPE_UUID;
-    }
 
     /**
      * @param null|string $uuid
@@ -65,6 +57,14 @@ abstract class UuidEntity extends Entity implements UuidEntityInterface
         $this->uuid = null;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    final public function getIdentityType()
+    {
+        return self::IDENTITY_TYPE_UUID;
     }
 }
 

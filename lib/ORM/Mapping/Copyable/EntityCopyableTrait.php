@@ -24,7 +24,7 @@ trait EntityCopyableTrait
     /**
      * @return void
      */
-    final public function __clone()
+    public function __clone()
     {
         if ($this->isEntityCloneSafe()) {
             $this->doEntityCloneSafeOperations();

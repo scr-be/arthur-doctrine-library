@@ -14,20 +14,12 @@ namespace Scribe\Doctrine\ORM\Mapping;
 /**
  * Class SlugEntity.
  */
-abstract class SlugEntity extends Entity implements SlugEntityInterface
+class SlugEntity extends Entity implements SlugEntityInterface
 {
     /**
      * @var null|string
      */
     protected $slug;
-
-    /**
-     * @return string
-     */
-    final public function getIdentityType()
-    {
-        return self::IDENTITY_TYPE_SLUG;
-    }
 
     /**
      * @param string|null $slug
@@ -65,6 +57,14 @@ abstract class SlugEntity extends Entity implements SlugEntityInterface
         $this->slug = null;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    final public function getIdentityType()
+    {
+        return self::IDENTITY_TYPE_SLUG;
     }
 }
 

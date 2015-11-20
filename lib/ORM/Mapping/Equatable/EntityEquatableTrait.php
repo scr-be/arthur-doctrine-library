@@ -36,26 +36,30 @@ trait EntityEquatableTrait
     {
         $reflectionAnalyser = new ClassReflectionAnalyser();
 
-        $comparisonProperties = $reflectionAnalyser
+        $propNamesOther = $propValuesOther = $reflectionAnalyser
             ->setReflectionClassFromClassInstance($entity)
             ->getProperties(false);
 
-        $selfProperties = $reflectionAnalyser
+        $propNamesSelf = $propValuesSelf = $reflectionAnalyser
             ->setReflectionClassFromClassInstance($this)
             ->getProperties(false);
 
-        $resolvePropertyValue = function (\ReflectionProperty &$value, $name, EntityInterface $e) {
-            $value->setAccessible(true);
-            $value = $value->getValue($e);
-        };
+        $propsOther = $propsSelf = [];
 
-        array_walk($comparisonProperties, $resolvePropertyValue, $entity);
-        array_walk($selfProperties, $resolvePropertyValue, $this);
+        foreach ($propNamesOther as $p) {
+            $p->setAccessible(true);
+            $propsOther[$p->getName()] = $p->getValue($entity);
+        }
 
-        ksort($comparisonProperties);
-        ksort($selfProperties);
+        foreach ($propNamesSelf as $p) {
+            $p->setAccessible(true);
+            $propsSelf[$p->getName()] = $p->getValue($this);
+        }
 
-        return (bool) ($comparisonProperties === $selfProperties);
+        ksort($propsOther);
+        ksort($propsSelf);
+
+        return (bool) ($propsOther === $propsSelf);
     }
 
     /**

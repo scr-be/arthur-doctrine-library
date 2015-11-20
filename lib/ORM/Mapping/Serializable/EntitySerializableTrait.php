@@ -34,11 +34,16 @@ trait EntitySerializableTrait
      */
     final public function serialize()
     {
-        $properties = (array) array_filter($this->getEntitySerializerProperties(), function ($name) {
-            return (bool) property_exists($this, $name);
-        }, ARRAY_FILTER_USE_KEY);
+        $properties = (array) array_filter($this->getEntitySerializerProperties(), function ($p) {
+            return (bool) property_exists($this, $p);
+        });
 
-        return $this->getEntitySerializerInstance()->getSerialized($properties);
+        $mapped = [];
+        array_map(function($name) use (&$mapped) {
+            $mapped[$name] = $this->{$name};
+        }, $properties);
+
+        return SerializerFactory::create()->serializeData($mapped);
     }
 
     /**
@@ -46,19 +51,11 @@ trait EntitySerializableTrait
      */
     final public function unserialize($data)
     {
-        $properties = (array) $this->getEntitySerializerInstance()->getUnSerialized($data);
+        $properties = (array) SerializerFactory::create()->unSerializeData($data);
 
-        array_map(function ($value, $name) {
+        array_walk($properties, function ($value, $name) {
             $this->{$name} = $value;
-        }, $properties);
-    }
-
-    /**
-     * @return SerializerInterface
-     */
-    protected function getEntitySerializerInstance()
-    {
-        return SerializerFactory::create(SerializerFactory::SERIALIZER_AUTO);
+        });
     }
 
     /**
@@ -66,13 +63,7 @@ trait EntitySerializableTrait
      */
     protected function getEntitySerializerProperties()
     {
-        if (!$this->hasIdentityType()) {
-            return [];
-        }
-
-        return [
-            $this->getIdentityType()
-        ];
+        return (array) ($this->hasIdentityType() ? $this->getIdentityType() : []);
     }
 }
 
