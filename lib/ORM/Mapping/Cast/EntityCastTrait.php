@@ -44,8 +44,8 @@ trait EntityCastTrait
     public function __toArray()
     {
         return [
-            'properties' => (array) get_class_vars(get_class($this)),
-            'methods' => (array) get_class_methods(get_class($this))
+            'properties' => (array) get_object_vars($this),
+            'methods' => (array) get_class_methods($this)
         ];
     }
 }

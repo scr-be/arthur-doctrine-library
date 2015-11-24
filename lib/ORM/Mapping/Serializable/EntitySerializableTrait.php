@@ -25,15 +25,24 @@ trait EntitySerializableTrait
     abstract public function getIdentityType();
 
     /**
-     * @return string
+     * @return bool
      */
     abstract public function hasIdentityType();
+
+    /**
+     * @return bool
+     */
+    abstract public function hasIdentity();
 
     /**
      * @return string
      */
     final public function serialize()
     {
+        if (!$this->hasIdentity()) {
+            return [];
+        }
+
         $properties = (array) array_filter($this->getEntitySerializerProperties(), function ($p) {
             return (bool) property_exists($this, $p);
         });
