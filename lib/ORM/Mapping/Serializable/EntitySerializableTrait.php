@@ -12,7 +12,6 @@
 namespace Scribe\Doctrine\ORM\Mapping\Serializable;
 
 use Scribe\Wonka\Serializer\SerializerFactory;
-use Scribe\Wonka\Serializer\SerializerInterface;
 
 /**
  * Trait EntitySerializableTrait.
@@ -48,7 +47,7 @@ trait EntitySerializableTrait
         });
 
         $mapped = [];
-        array_map(function($name) use (&$mapped) {
+        array_map(function ($name) use (&$mapped) {
             $mapped[$name] = $this->{$name};
         }, $properties);
 

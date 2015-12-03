@@ -24,17 +24,17 @@ class AbstractEntityType extends WonkaTestCase
     /**
      * @var IdEntityFixture|SlugEntityFixture|UuidEntityFixture
      */
-    static public $entity;
+    public static $entity;
 
     /**
      * @var IdEntityFixture|SlugEntityFixture|UuidEntityFixture
      */
-    static public $entityNoInitialize;
+    public static $entityNoInitialize;
 
     /**
      * @var string
      */
-    static public $type;
+    public static $type;
 
     /**
      * @var string

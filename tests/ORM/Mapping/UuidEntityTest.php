@@ -21,7 +21,7 @@ class UuidEntityTest extends AbstractEntityType
     /**
      * @var string
      */
-    static public $type = EntityInterface::IDENTITY_TYPE_UUID;
+    public static $type = EntityInterface::IDENTITY_TYPE_UUID;
 
     public function setUp()
     {

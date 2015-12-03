@@ -17,7 +17,6 @@ namespace Scribe\Doctrine\ORM\Mapping\Copyable;
 interface EntityCopyableInterface
 {
     /**
-     * @return void
      */
     public function __clone();
 

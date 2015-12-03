@@ -12,7 +12,6 @@
 namespace Scribe\Doctrine\ORM\Mapping\Equatable;
 
 use Scribe\Doctrine\ORM\Mapping\Entity;
-use Scribe\Doctrine\ORM\Mapping\EntityInterface;
 use Scribe\Wonka\Utility\Reflection\ClassReflectionAnalyser;
 
 /**

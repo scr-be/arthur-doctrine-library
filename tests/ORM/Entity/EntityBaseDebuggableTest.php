@@ -66,7 +66,7 @@ class EntityBaseDebuggableTest extends AbstractEntityBaseTest
 
         $expected = [
             'properties' => [
-                'id' => null
+                'id' => null,
             ],
             'methods' => array_merge(
                 [
@@ -89,7 +89,7 @@ class EntityBaseDebuggableTest extends AbstractEntityBaseTest
 
         $expected = [
             'properties' => [
-                'uuid' => null
+                'uuid' => null,
             ],
             'methods' => array_merge(
                 [
@@ -112,7 +112,7 @@ class EntityBaseDebuggableTest extends AbstractEntityBaseTest
 
         $expected = [
             'properties' => [
-                'slug' => null
+                'slug' => null,
             ],
             'methods' => array_merge(
                 [

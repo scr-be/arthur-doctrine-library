@@ -21,7 +21,7 @@ class SlugEntityTest extends AbstractEntityType
     /**
      * @var string
      */
-    static public $type = EntityInterface::IDENTITY_TYPE_SLUG;
+    public static $type = EntityInterface::IDENTITY_TYPE_SLUG;
 }
 
 /* EOF */

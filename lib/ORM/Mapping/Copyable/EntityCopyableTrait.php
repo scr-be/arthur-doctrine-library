@@ -22,7 +22,6 @@ trait EntityCopyableTrait
     abstract public function hasIdentity();
 
     /**
-     * @return void
      */
     public function __clone()
     {

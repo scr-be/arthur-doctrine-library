@@ -21,7 +21,7 @@ class IdEntityTest extends AbstractEntityType
     /**
      * @var string
      */
-    static public $type = EntityInterface::IDENTITY_TYPE_ID;
+    public static $type = EntityInterface::IDENTITY_TYPE_ID;
 
     public function setUp()
     {

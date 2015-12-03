@@ -45,7 +45,7 @@ trait EntityCastTrait
     {
         return [
             'properties' => (array) get_object_vars($this),
-            'methods' => (array) get_class_methods($this)
+            'methods' => (array) get_class_methods($this),
         ];
     }
 }

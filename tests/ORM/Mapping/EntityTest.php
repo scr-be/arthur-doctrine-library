@@ -22,12 +22,12 @@ class EntityTest extends WonkaTestCase
     /**
      * @var EntityFixture
      */
-    static public $entity;
+    public static $entity;
 
     /**
      * @var EntityFixture
      */
-    static public $entityNoInitialize;
+    public static $entityNoInitialize;
 
     public function setUp()
     {

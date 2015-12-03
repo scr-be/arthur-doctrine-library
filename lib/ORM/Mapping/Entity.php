@@ -99,7 +99,7 @@ class Entity implements EntityInterface
     final public function hasIdentity()
     {
         try {
-            return (bool)($this->getIdentity() !== null);
+            return (bool) ($this->getIdentity() !== null);
         } catch (ORMException $exception) {
             return false;
         }

@@ -100,7 +100,7 @@ trait EntityLifecycleTrait
      */
     final protected function callOrmLifecycleEvent($type, EventArgs $eventArgs = null)
     {
-        $prefix = EntityLifecycleInterface::LIFECYCLE_METHOD_PREFIX . $type;
+        $prefix = EntityLifecycleInterface::LIFECYCLE_METHOD_PREFIX.$type;
         $prefixLength = strlen($prefix);
 
         array_map(function ($method) use ($prefix, $prefixLength, $eventArgs) {
