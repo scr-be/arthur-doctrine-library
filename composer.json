@@ -35,9 +35,10 @@
     },
     "autoload" : {
         "psr-4" : {
-            "Scribe\\Doctrine\\Exception\\"    : "lib/Exception/",
-            "Scribe\\Doctrine\\ORM\\Mapping\\" : "lib/ORM/Mapping/",
-            "Scribe\\Doctrine\\ORM\\Manager\\" : "lib/ORM/Manager/"
+            "Scribe\\Doctrine\\Exception\\"       : "lib/Exception/",
+            "Scribe\\Doctrine\\ORM\\Mapping\\"    : "lib/ORM/Mapping/",
+            "Scribe\\Doctrine\\ORM\\Manager\\"    : "lib/ORM/Manager/",
+            "Scribe\\Doctrine\\ORM\\Repository\\" : "lib/ORM/Repository/"
         }
     },
     "autoload-dev" : {
