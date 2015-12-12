@@ -20,6 +20,18 @@ interface EntityManagerInterface
      * @return \Scribe\Doctrine\ORM\Repository\EntityRepository
      */
     public function getRepository();
+
+    /**
+     * @return string
+     */
+    public function getName();
+
+    /**
+     * @param bool $new
+     *
+     * @return \Scribe\Doctrine\ORM\Mapping\Entity
+     */
+    public function getTemp($new = false);
 }
 
 /* EOF */

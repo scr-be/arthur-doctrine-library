@@ -11,6 +11,7 @@
 
 namespace Scribe\Doctrine\ORM\Manager;
 
+use Scribe\Doctrine\ORM\Mapping\Entity;
 use Scribe\Doctrine\ORM\Repository\EntityRepository;
 
 /**
@@ -24,11 +25,23 @@ class EntityManager implements EntityManagerInterface
     protected $repository;
 
     /**
-     * @param $repository EntityRepository
+     * @var string
      */
-    public function __construct(EntityRepository $repository)
+    protected $entityName;
+
+    /**
+     * @var Entity
+     */
+    protected $entityTemp;
+
+    /**
+     * @param EntityRepository $repository
+     * @param string           $entityName
+     */
+    public function __construct(EntityRepository $repository, $entityName)
     {
         $this->repository = $repository;
+        $this->entityName = $entityName;
     }
 
     /**
@@ -37,6 +50,29 @@ class EntityManager implements EntityManagerInterface
     public function getRepository()
     {
         return $this->repository;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->entityName;
+    }
+
+    /**
+     * @param bool $new
+     *
+     * @return Entity
+     */
+    public function getTemp($new = false)
+    {
+        if (false === ($this->entityTemp instanceof Entity) || true === $new) {
+            $entityName = $this->getName();
+            $this->entityTemp = new $entityName();
+        }
+
+        return $this->entityTemp;
     }
 }
 
