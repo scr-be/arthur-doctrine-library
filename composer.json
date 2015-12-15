@@ -23,7 +23,7 @@
     ],
     "require" : {
         "php"                               : ">=5.6.4,~5.6|~7.0",
-        "scr-be/wonka-library"              : "~0.2",
+        "scr-be/wonka-library"              : "~0.3",
         "scr-be/augustus-primitive-library" : "~0.2",
         "doctrine/orm"                      : "~2.5"
     },
@@ -53,7 +53,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master" : "0.1-dev"
+            "dev-master" : "0.2-dev"
         }
     }
 }

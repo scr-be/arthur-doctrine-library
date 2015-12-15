@@ -27,13 +27,27 @@ trait EntityCastTrait
     abstract public function getIdentityType();
 
     /**
+     * @return string
+     */
+    abstract public function hasIdentity();
+
+    /**
      * {@inheritdoc}
      *
      * @return string
      */
     public function __toString()
     {
-        return sprintf('%s [%s:%s]', get_class($this), $this->getIdentityType(), (string) ($this->hasIdentity() ? $this->getIdentity() : 'no-identity'));
+        try {
+            return sprintf(
+                '%s [%s:%s]',
+                get_class($this),
+                $this->getIdentityType(),
+                (string) ($this->hasIdentity() ? $this->getIdentity() : 'no-identity')
+            );
+        } catch (\Exception $exception) {
+            return spl_object_hash($this);
+        }
     }
 
     /**

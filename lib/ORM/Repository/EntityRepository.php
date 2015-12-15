@@ -11,7 +11,9 @@
 
 namespace Scribe\Doctrine\ORM\Repository;
 
+use Doctrine\ORM\Cache;
 use Doctrine\ORM\EntityRepository as DoctrineEntityRepository;
+use Doctrine\ORM\Query;
 use Doctrine\ORM\QueryBuilder;
 use Scribe\Doctrine\Exception\ORMException;
 
@@ -20,6 +22,27 @@ use Scribe\Doctrine\Exception\ORMException;
  */
 class EntityRepository extends DoctrineEntityRepository implements EntityRepositoryInterface
 {
+    public function findOneFreshBy(array $predicates)
+    {
+        $builder = $this
+            ->createQueryBuilder('e');
+
+        $builder = $this->addPredicatesToBuilder('e', $builder, $predicates);
+
+        $builder
+            ->setCacheMode(Cache::MODE_REFRESH)
+            ->setCacheable(false);
+
+        $query = $builder->getQuery();
+        $query
+            ->setHint(Query::HINT_REFRESH_ENTITY, true)
+            ->setHint(Query::HINT_REFRESH, true)
+            ->setHint(Query::HINT_CACHE_ENABLED, false)
+            ->setHint(Query::HINT_CACHE_EVICT, true);
+
+        return $query->getOneOrNullResult();
+    }
+
     /**
      * @param array $predicates
      *
@@ -53,21 +76,12 @@ class EntityRepository extends DoctrineEntityRepository implements EntityReposit
      */
     public function addPredicatesToBuilder($alias, QueryBuilder $builder, array $predicates = [])
     {
-        for ($i = 0; $i < count($predicates); $i++) {
-            if (count($predicates[$i]) === 2) {
-                $predicates[$i][] = '=';
-            }
+        $i = 0;
 
-            if (count($predicates[$i]) !== 3) {
-                continue;
-            }
-
-            $whereMethod = ($i === 0 ? 'where' : 'andWhere');
-            $whereParam = 'predBldr' . str_pad($i, 2, '0', STR_PAD_LEFT);
-            list($column, $constraint, $how) = $predicates[$i];
-
-            $builder->$whereMethod($alias . '.' . $column . ' ' . $how . ' :' . $whereParam);
-            $builder->setParameter($whereParam, $constraint);
+        foreach ($predicates as $name => $value) {
+            $method = ($i === 0 ? 'where' : 'andWhere');
+            $builder->{$method}("$alias.$name = :$name");
+            $builder->setParameter($name, $value);
         }
 
         return $builder;
