@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Scribe\MantleBundle\Tests\Doctrine\Base\Entity;
+namespace Scribe\Doctrine\Base\Entity;
 
 use Scribe\Doctrine\Exception\ORMException;
 use Scribe\Wonka\Utility\Reflection\ClassReflectionAnalyser;

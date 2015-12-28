@@ -11,3 +11,5 @@ php_exts : igbinary
 app_prep : dep-composer
 app_post : ~
 app_path : ~
+pkg_name : arthur-doctrine-library
+pkg_desc : "a foundational library with Doctrine-ORM oriented base classes, such as 'Entity' implementations through abstract 'IdEntity', 'SlugEntity', and 'UuidEntity' classes."

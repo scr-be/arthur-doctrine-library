@@ -35,11 +35,11 @@ trait EntityEquatableTrait
     {
         $reflectionAnalyser = new ClassReflectionAnalyser();
 
-        $propNamesOther = $propValuesOther = $reflectionAnalyser
+        $propNamesOther = $reflectionAnalyser
             ->setReflectionClassFromClassInstance($entity)
             ->getProperties(false);
 
-        $propNamesSelf = $propValuesSelf = $reflectionAnalyser
+        $propNamesSelf = $reflectionAnalyser
             ->setReflectionClassFromClassInstance($this)
             ->getProperties(false);
 

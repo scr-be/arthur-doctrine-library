@@ -3,7 +3,7 @@
     "license"     : "MIT",
     "type"        : "library",
     "homepage"    : "https://scr.be/arthur-doctrine-library",
-    "description" : "A small library that provides foundational Doctrine functions and classes, used as the base for many other Scribe projects.",
+    "description" : "A foundational library with Doctrine-ORM oriented base classes, such as 'Entity' implementations through abstract 'IdEntity', 'SlugEntity', and 'UuidEntity' classes.",
     "support" : {
         "email"  : "rmf@scr.be",
         "issues" : "https://arthur-doctrine-library.oss.scr.be/issues",
@@ -30,8 +30,7 @@
     "require-dev" : {
         "phpunit/phpunit"        : "~5.0",
         "codacy/coverage"        : "~1.0",
-        "satooshi/php-coveralls" : "~0.7",
-        "symfony/config"         : "~2.8"
+        "satooshi/php-coveralls" : "~1.0"
     },
     "autoload" : {
         "psr-4" : {
