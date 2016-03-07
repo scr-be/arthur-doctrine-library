@@ -112,7 +112,7 @@ class Entity implements EntityInterface
      */
     final protected function throwExc(ORMException $exception)
     {
-        throw new ORMException('Entity %s: %s', $exception->getCode(), $exception, get_class($this), $exception->getMessage());
+        throw new ORMException('Entity %s: %s', $exception, get_class($this), $exception->getMessage());
     }
 }
 

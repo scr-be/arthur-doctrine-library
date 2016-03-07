@@ -22,10 +22,11 @@
         }
     ],
     "require" : {
-        "php"                               : ">=5.6.4,~5.6|~7.0",
-        "scr-be/wonka-library"              : "~0.3",
-        "scr-be/augustus-primitive-library" : "~0.3",
-        "doctrine/orm"                      : "~2.5"
+        "php"                                  : ">=5.6.4,~5.6|~7.0",
+        "scr-be/wonka-library"                 : "~0.5",
+        "scr-be/augustus-primitive-library"    : "~0.3",
+        "scr-be/arthur-doctrine-utils-library" : "~0.1",
+        "doctrine/orm"                         : "~2.5"
     },
     "require-dev" : {
         "phpunit/phpunit"        : "~5.0",
@@ -34,10 +35,9 @@
     },
     "autoload" : {
         "psr-4" : {
-            "Scribe\\Doctrine\\Exception\\"       : "lib/Exception/",
-            "Scribe\\Doctrine\\ORM\\Mapping\\"    : "lib/ORM/Mapping/",
-            "Scribe\\Doctrine\\ORM\\Manager\\"    : "lib/ORM/Manager/",
-            "Scribe\\Doctrine\\ORM\\Repository\\" : "lib/ORM/Repository/"
+            "Scribe\\Doctrine\\ORM\\Mapping\\"    : "lib/Mapping/",
+            "Scribe\\Doctrine\\ORM\\Manager\\"    : "lib/Manager/",
+            "Scribe\\Doctrine\\ORM\\Repository\\" : "lib/Repository/"
         }
     },
     "autoload-dev" : {
@@ -52,7 +52,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master" : "0.3-dev"
+            "dev-master" : "0.5-dev"
         }
     }
 }

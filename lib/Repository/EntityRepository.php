@@ -63,7 +63,7 @@ class EntityRepository extends DoctrineEntityRepository implements EntityReposit
         try {
             return (int) $query->getSingleScalarResult();
         } catch (\Exception $e) {
-            throw new ORMException($e->getMessage(), null, $e);
+            throw new ORMException($e->getMessage(), $e);
         }
     }
 
