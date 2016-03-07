@@ -34,7 +34,6 @@ class EntityLifecycleTraitTest extends WonkaTestCase
             $mock = $this->getMockBuilder('Scribe\\Doctrine\\ORM\\Mapping\\Lifecycle\\EntityLifecycleTrait', [], '', true, true, true, ['callOrmLifecycleEvent'])
                 ->getMockForTrait();
 
-
             $mock->{$m}();
         }
     }

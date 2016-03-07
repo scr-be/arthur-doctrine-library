@@ -19,29 +19,29 @@ use Scribe\Wonka\Utility\UnitTest\WonkaTestCase;
  */
 class EntityManagerTest extends WonkaTestCase
 {
-	/**
-	 * @var EntityManager
-	 */
-	protected static $em;
+    /**
+     * @var EntityManager
+     */
+    protected static $em;
 
-	public function setUp()
-	{
-		$repo = $this->getMockBuilder('\\Scribe\\Doctrine\\ORM\\Repository\\EntityRepository')
-			->disableOriginalConstructor()
-			->getMock();
+    public function setUp()
+    {
+        $repo = $this->getMockBuilder('\\Scribe\\Doctrine\\ORM\\Repository\\EntityRepository')
+            ->disableOriginalConstructor()
+            ->getMock();
 
-		self::$em = new EntityManager($repo, 'EntityName');
-	}
+        self::$em = new EntityManager($repo, 'EntityName');
+    }
 
-	public function testRepositoryExists()
-	{
-		static::assertInstanceOf('Scribe\\Doctrine\\ORM\\Repository\\EntityRepository', self::$em->getRepository());
-	}
+    public function testRepositoryExists()
+    {
+        static::assertInstanceOf('Scribe\\Doctrine\\ORM\\Repository\\EntityRepository', self::$em->getRepository());
+    }
 
-	public function testEntityName()
-	{
-		static::assertEquals('EntityName', self::$em->getName());
-	}
+    public function testEntityName()
+    {
+        static::assertEquals('EntityName', self::$em->getName());
+    }
 }
 
 /* EOF */
