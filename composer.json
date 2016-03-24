@@ -42,7 +42,7 @@
     },
     "autoload-dev" : {
         "psr-4" : {
-            "Scribe\\Doctrine\\Tests\\" : "tests/"
+            "Scribe\\Doctrine\\Tests\\ORM\\" : "tests/"
         }
     },
     "minimum-stability" : "dev",
