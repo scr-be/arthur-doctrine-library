@@ -1,18 +1,19 @@
 <?php
 
 /*
- * This file is part of the Arthur Doctrine Library.
+ * This file is part of the `src-run/arthur-doctrine-library` project.
  *
- * (c) Scribe Inc. <oss@scr.be>
+ * (c) Rob Frawley 2nd <rmf@src.run>
+ * (c) Scribe Inc      <scr@src.run>
  *
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
-namespace Scribe\Doctrine\Tests\Doctrine\ORM\Manager;
+namespace SR\Doctrine\Tests\Doctrine\ORM\Manager;
 
-use Scribe\Doctrine\ORM\Manager\EntityManager;
-use Scribe\Wonka\Utility\UnitTest\WonkaTestCase;
+use SR\Doctrine\ORM\Manager\EntityManager;
+use SR\Wonka\Utility\UnitTest\WonkaTestCase;
 
 /**
  * Class EntityManagerTest.
@@ -26,7 +27,7 @@ class EntityManagerTest extends WonkaTestCase
 
     public function setUp()
     {
-        $repo = $this->getMockBuilder('\\Scribe\\Doctrine\\ORM\\Repository\\EntityRepository')
+        $repo = $this->getMockBuilder('\\SR\\Doctrine\\ORM\\Repository\\EntityRepository')
             ->disableOriginalConstructor()
             ->getMock();
 
@@ -35,7 +36,7 @@ class EntityManagerTest extends WonkaTestCase
 
     public function testRepositoryExists()
     {
-        static::assertInstanceOf('Scribe\\Doctrine\\ORM\\Repository\\EntityRepository', self::$em->getRepository());
+        static::assertInstanceOf('SR\\Doctrine\\ORM\\Repository\\EntityRepository', self::$em->getRepository());
     }
 
     public function testEntityName()

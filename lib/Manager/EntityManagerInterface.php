@@ -1,15 +1,16 @@
 <?php
 
 /*
- * This file is part of the Arthur Doctrine Library.
+ * This file is part of the `src-run/arthur-doctrine-library` project.
  *
- * (c) Scribe Inc. <oss@scr.be>
+ * (c) Rob Frawley 2nd <rmf@src.run>
+ * (c) Scribe Inc      <scr@src.run>
  *
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
-namespace Scribe\Doctrine\ORM\Manager;
+namespace SR\Doctrine\ORM\Manager;
 
 /**
  * Interface EntityManagerInterface.
@@ -17,7 +18,7 @@ namespace Scribe\Doctrine\ORM\Manager;
 interface EntityManagerInterface
 {
     /**
-     * @return \Scribe\Doctrine\ORM\Repository\EntityRepository
+     * @return \SR\Doctrine\ORM\Repository\EntityRepository
      */
     public function getRepository();
 
@@ -29,7 +30,7 @@ interface EntityManagerInterface
     /**
      * @param bool $new
      *
-     * @return \Scribe\Doctrine\ORM\Mapping\Entity
+     * @return \SR\Doctrine\ORM\Mapping\Entity
      */
     public function getTemp($new = false);
 }

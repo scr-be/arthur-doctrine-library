@@ -1,32 +1,33 @@
 <?php
 
 /*
- * This file is part of the Scribe Mantle Bundle.
+ * This file is part of the `src-run/arthur-doctrine-library` project.
  *
- * (c) Scribe Inc. <source@scribe.software>
+ * (c) Rob Frawley 2nd <rmf@src.run>
+ * (c) Scribe Inc      <scr@src.run>
  *
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
-namespace Scribe\Doctrine\Base\Entity;
+namespace SR\Doctrine\Base\Entity;
 
-use Scribe\Doctrine\ORM\Mapping\Entity;
-use Scribe\Doctrine\ORM\Mapping\IdEntity;
-use Scribe\Doctrine\ORM\Mapping\SlugEntity;
-use Scribe\Doctrine\ORM\Mapping\UuidEntity;
-use Scribe\Wonka\Utility\Reflection\ClassReflectionAnalyser;
-use Scribe\Wonka\Utility\UnitTest\WonkaTestCase;
+use SR\Doctrine\ORM\Mapping\Entity;
+use SR\Doctrine\ORM\Mapping\IdEntity;
+use SR\Doctrine\ORM\Mapping\SlugEntity;
+use SR\Doctrine\ORM\Mapping\UuidEntity;
+use SR\Wonka\Utility\Reflection\ClassReflectionAnalyser;
+use SR\Wonka\Utility\UnitTest\WonkaTestCase;
 
 /**
  * Class AbstractEntityBaseTest.
  */
 abstract class AbstractEntityBaseTest extends WonkaTestCase
 {
-    const ENTITY_FQN = 'Scribe\Doctrine\ORM\Mapping\Entity';
-    const ID_ENTITY_FQN = 'Scribe\Doctrine\ORM\Mapping\IdEntity';
-    const UUID_ENTITY_FQN = 'Scribe\Doctrine\ORM\Mapping\UuidEntity';
-    const SLUG_ENTITY_FQN = 'Scribe\Doctrine\ORM\Mapping\SlugEntity';
+    const ENTITY_FQN = 'SR\Doctrine\ORM\Mapping\Entity';
+    const ID_ENTITY_FQN = 'SR\Doctrine\ORM\Mapping\IdEntity';
+    const UUID_ENTITY_FQN = 'SR\Doctrine\ORM\Mapping\UuidEntity';
+    const SLUG_ENTITY_FQN = 'SR\Doctrine\ORM\Mapping\SlugEntity';
 
     /**
      * @var ClassReflectionAnalyser

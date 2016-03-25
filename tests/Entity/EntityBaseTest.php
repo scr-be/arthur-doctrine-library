@@ -1,18 +1,19 @@
 <?php
 
 /*
- * This file is part of the Scribe Mantle Bundle.
+ * This file is part of the `src-run/arthur-doctrine-library` project.
  *
- * (c) Scribe Inc. <source@scribe.software>
+ * (c) Rob Frawley 2nd <rmf@src.run>
+ * (c) Scribe Inc      <scr@src.run>
  *
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
-namespace Scribe\Doctrine\Base\Entity;
+namespace SR\Doctrine\Base\Entity;
 
-use Scribe\Doctrine\Exception\ORMException;
-use Scribe\Wonka\Utility\Reflection\ClassReflectionAnalyser;
+use SR\Doctrine\Exception\ORMException;
+use SR\Wonka\Utility\Reflection\ClassReflectionAnalyser;
 
 /**
  * Class EntityBaseTest.
@@ -22,7 +23,7 @@ class EntityBaseTest extends AbstractEntityBaseTest
     public function testIsCloneSafeNoId()
     {
         $this->setExpectedException(
-            'Scribe\Doctrine\Exception\ORMException',
+            'SR\Doctrine\Exception\ORMException',
             'Testing trigger error function'
         );
 

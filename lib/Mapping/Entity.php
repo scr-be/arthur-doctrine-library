@@ -1,24 +1,25 @@
 <?php
 
 /*
- * This file is part of the Arthur Doctrine Library.
+ * This file is part of the `src-run/arthur-doctrine-library` project.
  *
- * (c) Scribe Inc. <oss@scr.be>
+ * (c) Rob Frawley 2nd <rmf@src.run>
+ * (c) Scribe Inc      <scr@src.run>
  *
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
-namespace Scribe\Doctrine\ORM\Mapping;
+namespace SR\Doctrine\ORM\Mapping;
 
-use Scribe\Doctrine\Exception\ORMException;
-use Scribe\Doctrine\ORM\Mapping\Cast\EntityCastTrait;
-use Scribe\Doctrine\ORM\Mapping\Copyable\EntityCopyableTrait;
-use Scribe\Doctrine\ORM\Mapping\Debug\EntityDebugTrait;
-use Scribe\Doctrine\ORM\Mapping\Equatable\EntityEquatableTrait;
-use Scribe\Doctrine\ORM\Mapping\Initialize\EntityInitializeTrait;
-use Scribe\Doctrine\ORM\Mapping\Lifecycle\EntityLifecycleTrait;
-use Scribe\Doctrine\ORM\Mapping\Serializable\EntitySerializableTrait;
+use SR\Doctrine\Exception\ORMException;
+use SR\Doctrine\ORM\Mapping\Cast\EntityCastTrait;
+use SR\Doctrine\ORM\Mapping\Copyable\EntityCopyableTrait;
+use SR\Doctrine\ORM\Mapping\Debug\EntityDebugTrait;
+use SR\Doctrine\ORM\Mapping\Equatable\EntityEquatableTrait;
+use SR\Doctrine\ORM\Mapping\Initialize\EntityInitializeTrait;
+use SR\Doctrine\ORM\Mapping\Lifecycle\EntityLifecycleTrait;
+use SR\Doctrine\ORM\Mapping\Serializable\EntitySerializableTrait;
 
 /**
  * Class Entity.

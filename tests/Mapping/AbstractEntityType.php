@@ -1,20 +1,21 @@
 <?php
 
 /*
- * This file is part of the Arthur Doctrine Library.
+ * This file is part of the `src-run/arthur-doctrine-library` project.
  *
- * (c) Scribe Inc. <oss@scr.be>
+ * (c) Rob Frawley 2nd <rmf@src.run>
+ * (c) Scribe Inc      <scr@src.run>
  *
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
-namespace Scribe\Doctrine\Tests\ORM\Mapping;
+namespace SR\Doctrine\Tests\ORM\Mapping;
 
-use Scribe\Doctrine\Tests\ORM\Mapping\Fixture\IdEntityFixture;
-use Scribe\Doctrine\Tests\ORM\Mapping\Fixture\SlugEntityFixture;
-use Scribe\Doctrine\Tests\ORM\Mapping\Fixture\UuidEntityFixture;
-use Scribe\Wonka\Utility\UnitTest\WonkaTestCase;
+use SR\Doctrine\Tests\ORM\Mapping\Fixture\IdEntityFixture;
+use SR\Doctrine\Tests\ORM\Mapping\Fixture\SlugEntityFixture;
+use SR\Doctrine\Tests\ORM\Mapping\Fixture\UuidEntityFixture;
+use SR\Wonka\Utility\UnitTest\WonkaTestCase;
 
 /**
  * Class AbstractEntityType.
@@ -43,7 +44,7 @@ class AbstractEntityType extends WonkaTestCase
 
     public function setUp()
     {
-        $this->className = 'Scribe\\Doctrine\\Tests\\ORM\\Mapping\\Fixture\\'.ucfirst(static::$type).'EntityFixture';
+        $this->className = 'SR\\Doctrine\\Tests\\ORM\\Mapping\\Fixture\\'.ucfirst(static::$type).'EntityFixture';
         $this->typeGetMethod = 'get'.ucfirst(static::$type);
         $this->typeSetMethod = 'set'.ucfirst(static::$type);
         $this->typeHasMethod = 'has'.ucfirst(static::$type);

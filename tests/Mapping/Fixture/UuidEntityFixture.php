@@ -1,17 +1,18 @@
 <?php
 
 /*
- * This file is part of the Arthur Doctrine Library.
+ * This file is part of the `src-run/arthur-doctrine-library` project.
  *
- * (c) Scribe Inc. <oss@scr.be>
+ * (c) Rob Frawley 2nd <rmf@src.run>
+ * (c) Scribe Inc      <scr@src.run>
  *
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
-namespace Scribe\Doctrine\Tests\ORM\Mapping\Fixture;
+namespace SR\Doctrine\Tests\ORM\Mapping\Fixture;
 
-use Scribe\Doctrine\ORM\Mapping\UuidEntity;
+use SR\Doctrine\ORM\Mapping\UuidEntity;
 
 /**
  * Class UuidEntityFixture.

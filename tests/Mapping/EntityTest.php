@@ -1,18 +1,19 @@
 <?php
 
 /*
- * This file is part of the Arthur Doctrine Library.
+ * This file is part of the `src-run/arthur-doctrine-library` project.
  *
- * (c) Scribe Inc. <oss@scr.be>
+ * (c) Rob Frawley 2nd <rmf@src.run>
+ * (c) Scribe Inc      <scr@src.run>
  *
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
-namespace Scribe\Doctrine\Tests\ORM\Mapping;
+namespace SR\Doctrine\Tests\ORM\Mapping;
 
-use Scribe\Doctrine\Tests\ORM\Mapping\Fixture\EntityFixture;
-use Scribe\Wonka\Utility\UnitTest\WonkaTestCase;
+use SR\Doctrine\Tests\ORM\Mapping\Fixture\EntityFixture;
+use SR\Wonka\Utility\UnitTest\WonkaTestCase;
 
 /**
  * Class EntityTest.
@@ -54,13 +55,13 @@ class EntityTest extends WonkaTestCase
 
     public function testEntityNoIdentityGetter()
     {
-        $this->setExpectedException('Scribe\Doctrine\Exception\ORMException');
+        $this->setExpectedException('SR\Doctrine\Exception\ORMException');
         self::$entity->getIdentity();
     }
 
     public function testEntityNoIdentitySetter()
     {
-        $this->setExpectedException('Scribe\Doctrine\Exception\ORMException');
+        $this->setExpectedException('SR\Doctrine\Exception\ORMException');
         self::$entity->setIdentity('anything');
     }
 }
