@@ -13,35 +13,53 @@
 namespace SR\Doctrine\Tests\Doctrine\ORM\Manager;
 
 use SR\Doctrine\ORM\Manager\EntityManager;
-use SR\Wonka\Utility\UnitTest\WonkaTestCase;
+use SR\Doctrine\ORM\Repository\EntityRepository;
 
 /**
  * Class EntityManagerTest.
  */
-class EntityManagerTest extends WonkaTestCase
+class EntityManagerTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @var EntityManager
      */
     protected static $em;
 
-    public function setUp()
+    /**
+     * @return \PHPUnit_Framework_MockObject_MockObject|EntityRepository
+     */
+    private function getRepoMock()
     {
-        $repo = $this->getMockBuilder('\\SR\\Doctrine\\ORM\\Repository\\EntityRepository')
+        return $this->getMockBuilder('\SR\Doctrine\ORM\Repository\EntityRepository')
             ->disableOriginalConstructor()
             ->getMock();
+    }
 
-        self::$em = new EntityManager($repo, 'EntityName');
+    public function setUp()
+    {
+        self::$em = new EntityManager($this->getRepoMock(), '\SR\Doctrine\ORM\Tests\Manager\Fixture\EntityFixture');
     }
 
     public function testRepositoryExists()
     {
-        static::assertInstanceOf('SR\\Doctrine\\ORM\\Repository\\EntityRepository', self::$em->getRepository());
+        $this->assertInstanceOf('SR\\Doctrine\\ORM\\Repository\\EntityRepository', self::$em->getRepository());
     }
 
     public function testEntityName()
     {
-        static::assertEquals('EntityName', self::$em->getName());
+        $this->assertEquals('\SR\Doctrine\ORM\Tests\Manager\Fixture\EntityFixture', self::$em->getName());
+    }
+
+    public function testGetTemporaryInstance()
+    {
+        $instance = self::$em->getTemporaryInstance();
+        $this->assertInstanceOf('\SR\Doctrine\ORM\Tests\Manager\Fixture\EntityFixture', $instance);
+        $instance->setIdentity(1000);
+        $this->assertSame(1000, $instance->getIdentity());
+        $instanceTwo = self::$em->getTemporaryInstance();
+        $this->assertSame(1000, $instanceTwo->getIdentity());
+        $instanceThree = self::$em->getTemporaryInstance(true);
+        $this->assertNotEquals(1000, $instanceThree->getIdentity());
     }
 }
 

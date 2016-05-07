@@ -12,13 +12,21 @@
 
 namespace SR\Doctrine\ORM\Manager;
 
+use SR\Doctrine\ORM\Repository\EntityRepository;
+
 /**
  * Interface EntityManagerInterface.
  */
 interface EntityManagerInterface
 {
     /**
-     * @return \SR\Doctrine\ORM\Repository\EntityRepository
+     * @param EntityRepository $repository
+     * @param string           $entityName
+     */
+    public function __construct(EntityRepository $repository, $entityName);
+
+    /**
+     * @return EntityRepository
      */
     public function getRepository();
 
@@ -30,9 +38,9 @@ interface EntityManagerInterface
     /**
      * @param bool $new
      *
-     * @return \SR\Doctrine\ORM\Mapping\Entity
+     * @return Entity
      */
-    public function getTemp($new = false);
+    public function getTemporaryInstance($forceNewInstance = false);
 }
 
 /* EOF */

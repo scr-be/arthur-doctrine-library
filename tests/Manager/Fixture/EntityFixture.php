@@ -10,19 +10,15 @@
  * file that was distributed with this source code.
  */
 
-namespace SR\Doctrine\ORM\Mapping\Debug;
+namespace SR\Doctrine\ORM\Tests\Manager\Fixture;
+
+use SR\Doctrine\ORM\Mapping\IdEntity;
 
 /**
- * Interface EntityDebugInterface.
+ * Class EntityFixture.
  */
-interface EntityDebugInterface
+class EntityFixture extends IdEntity
 {
-    /**
-     * Provides hook when passed to {@see var_dump()}.
-     *
-     * @return array
-     */
-    public function __debugInfo();
 }
 
 /* EOF */

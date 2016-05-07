@@ -62,14 +62,14 @@ class EntityManager implements EntityManagerInterface
     }
 
     /**
-     * @param bool $new
+     * @param bool $forceNewInstance
      *
      * @return Entity
      */
-    public function getTemp($new = false)
+    public function getTemporaryInstance($forceNewInstance = false)
     {
-        if (false === ($this->entityTemp instanceof Entity) || true === $new) {
-            $entityName = $this->getName();
+        if (!$this->entityTemp || $forceNewInstance === true) {
+            $entityName = $this->entityName;
             $this->entityTemp = new $entityName();
         }
 
